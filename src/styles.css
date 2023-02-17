@@ -1,1 +1,306 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Dosis&family=Roboto:wght@400;900&display=swap');
+
+:root {
+  --primary-color: #191918;
+  --secondary-color: #696867;
+  --active-color: #E61C42;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0;
+}
+
+button {
+  width: 150px;
+  padding: 7px;
+  color: #696867;
+  background: #f0f0f0;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+}
+
+button.active {
+  background: #fff;
+}
+
+input {
+  padding: 2px;
+  height: 24px;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  padding-inline: 14px;
+}
+
+ul {
+  display: flex;
+  font-weight: bold;
+}
+
+li {
+  list-style-type: none;
+  padding-block: 2px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: 100vh;
+
+}
+
+li.active a {
+  border-bottom: solid 3px #E61C42;
+  color: var(--active-color);
+}
+
+.container {
+  text-align: center;
+  margin-block: auto;
+  display: block;
+  color: #696867;
+  z-index: 0;
+  width: 70%;
+}
+
+.user_data {
+  text-align: center;
+  margin-block: auto;
+  display: block;
+  color: #696867;
+  width: max-content;
+}
+
+.chat {
+  background: #fff;
+  width: 30%;
+  border-right: solid 2px #ccc;
+  padding-inline: 20px;
+  padding-top: 30px;
+  text-align: center;
+  display: inline-block;
+}
+
+.chat_head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat_container {
+  background: #fff;
+  margin: auto;
+  text-align: center;
+  color: #696867;
+  display: block;
+  margin-block: auto;
+  align-items: center;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.refresh {
+  display: flex;
+  align-items: center;
+}
+
+.btn_tab_bg {
+  background: #f0f0f0;
+  margin-block: 30px;
+  text-align: center;
+  width: fit-content;
+  padding: 5px;
+  border-radius: 5px;
+  margin-inline: auto;
+}
+
+.navbar {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 2px #ccc;
+  align-items: center;
+  z-index: 30;
+}
+
+.main_menu {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+
+.user_menu {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+
+.user {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+}
+
+.common_menu {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 30;
+  margin-left: 30px;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.dropdown_content {
+  display: none;
+  position: absolute;
+  padding: 5px;
+  padding-block: 8px;
+  border-radius: 3px;
+  text-align: center;
+  z-index: 40;
+}
+
+.dropdown_content a {
+  color: #fff;
+}
+
+.dropdown:hover .dropdown_content {
+  display: block;
+  background: #696867;
+}
+
+.dropdown_btn {
+  background: none;
+}
+
+.logo {
+  width: 50px;
+}
+
+@media screen and (max-width: 1300px) {
+  .chat {
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    border-right: none;
+    width: 100%;
+  }
+
+  .chat_head {
+    display: block;
+    text-align: center;
+  }
+
+  .search {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .refresh {
+    display: block;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  input {
+    height: 30px;
+    border: none;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .navbar {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: none;
+    align-items: center;
+    z-index: 30;
+  }
+
+  .main {
+    display: inline-block;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .container {
+    text-align: center;
+    margin-block: auto;
+    display: block;
+    color: #696867;
+    z-index: 0;
+    width: 100%;
+  }
+
+  .chat {
+    background: #fff;
+    text-align: center;
+    display: inline-block;
+    border-right: none;
+    width: 100%;
+  }
+
+  .chat_head {
+    display: block;
+    text-align: center;
+  }
+
+  .search {
+    display: flex;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+  }
+
+  .refresh {
+    display: block;
+    align-items: center;
+  }
+
+  .common_menu {
+    visibility: hidden;
+  }
+
+  ul {
+    display: block;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .dropdown{
+    position: relative;
+    display: inline-block;
+  }
+
+}
