@@ -9,6 +9,9 @@ import { MyTeamComponent } from './pages/my-team/my-team.component';
 import { AutomatizationsComponent } from './pages/automatizations/automatizations.component';
 import { NeedHelpComponent } from './pages/need-help/need-help.component';
 import { HomeComponent } from './pages/home/home.component';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { HomeComponent } from './pages/home/home.component';
     MyTeamComponent,
     AutomatizationsComponent,
     NeedHelpComponent,
-    HomeComponent
+    HomeComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

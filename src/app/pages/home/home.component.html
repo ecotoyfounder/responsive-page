@@ -5,7 +5,7 @@
         <h1>Chats</h1>
         <button
           (click)="refresh()"
-          style="width: 44px; background: none; margin-left: 10px; padding-top: 12px"
+          style="width: 40px; background: none; margin-left: 10px; padding-top: 12px"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path
@@ -14,7 +14,7 @@
         </button>
       </div>
       <div class="search">
-        <input>
+        <input type="text" [(ngModel)]="search">
         <button style="width: 40px; background: none">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
             <path
@@ -30,13 +30,13 @@
           [class.active]="state === 'on'"
           (click)="onToggle('on')"
         >
-          My(0)
+          My({{ newsTitle.length }})
         </button>
         <button
           [class.active]="state === 'off'"
           (click)="onToggle('off')"
         >
-          Open(0)
+          Open({{ selectedNews.length }})
         </button>
       </div>
       <button style="background: none; width: 30px">
@@ -48,13 +48,34 @@
     </div>
     <div *ngIf="toggler; else open">
       <div class="chat_container">
-        <h2>No chats to show</h2>
+        <div *ngIf="newsTitle.length; else noNews">
+          <div *ngFor="let title of newsTitle | search: search">
+            <div class="flex">
+                <input
+                  type="checkbox"
+                  [value]="title"
+                  (change)="addSelectedNews($event)"
+                >
+              <h4>{{ title }}</h4>
+            </div>
+          </div>
+        </div>
+        <ng-template #noNews>
+          <h2>No news to show</h2>
+        </ng-template>
       </div>
     </div>
   </div>
   <ng-template #open>
     <div class="chat_container">
-      <h2>No chats to show</h2>
+      <div *ngIf="selectedNews.length; else noNews">
+        <div *ngFor="let selectNews of selectedNews | search: search; let idx = index">
+          <h4>{{ idx + 1 }}. {{ selectNews }}</h4>
+        </div>
+      </div>
+      <ng-template #noNews>
+        <h2>No news to show</h2>
+      </ng-template>
     </div>
   </ng-template>
   <div class="container">

@@ -6,6 +6,19 @@
   --active-color: #E61C42;
 }
 
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+
+h4 {
+  margin: 14px;
+  text-align: start;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -50,6 +63,7 @@ ul {
 
 li {
   list-style-type: none;
+  width: max-content;
   padding-block: 2px;
 }
 
@@ -86,8 +100,9 @@ li.active a {
   background: #fff;
   width: 30%;
   border-right: solid 2px #ccc;
-  padding-inline: 20px;
-  padding-top: 30px;
+  padding: 30px;
+  min-height: 100%;
+  height: max-content;
   text-align: center;
   display: inline-block;
 }
@@ -101,6 +116,7 @@ li.active a {
   background: #fff;
   margin: auto;
   text-align: center;
+  height: max-content;
   color: #696867;
   display: block;
   margin-block: auto;
@@ -137,56 +153,64 @@ li.active a {
 }
 
 .main_menu {
-  background: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   z-index: 30;
 }
 
+.main_logo {
+  align-items: center;
+}
+
 .user_menu {
-  background: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   z-index: 30;
 }
 
 .user {
-  background: #fff;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   z-index: 30;
 }
 
 .common_menu {
-  background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 30;
-  margin-left: 30px;
 }
 
 .dropdown{
   position: relative;
-  display: inline-block;
-  margin-right: 50px;
+  display: block;
 }
 
 .dropdown_content {
   display: none;
   position: absolute;
+  right: 20px;
+  top: 35px;
+  max-width: fit-content;
+  font-max-size: medium;
+  text-align: center;
   padding: 5px;
   padding-block: 8px;
   border-radius: 3px;
-  text-align: center;
   z-index: 40;
 }
 
 .dropdown_content a {
   color: #fff;
+}
+
+.dropdown_content li {
+  text-align: center;
+  display: block;
+  margin: auto;
 }
 
 .dropdown:hover .dropdown_content {
@@ -203,12 +227,18 @@ li.active a {
 }
 
 @media screen and (max-width: 1300px) {
+
+  button {
+    width: 90px;
+  }
+
   .chat {
     background: #fff;
     text-align: center;
-    display: inline-block;
-    border-right: none;
+    display: block;
+    padding: 30px;
     width: 100%;
+    max-width: content-box;
   }
 
   .chat_head {
@@ -229,7 +259,7 @@ li.active a {
   }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 870px) {
   input {
     height: 30px;
     border: none;
@@ -242,33 +272,32 @@ li.active a {
   .navbar {
     background: #fff;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin: auto;
     border-bottom: none;
     align-items: center;
     z-index: 30;
+    max-width: fit-content;
   }
 
   .main {
-    display: inline-block;
+    display: block;
     text-align: center;
     justify-content: center;
+    max-width: fit-content;
   }
 
   .container {
-    text-align: center;
-    margin-block: auto;
-    display: block;
-    color: #696867;
-    z-index: 0;
-    width: 100%;
+    display: none;
   }
 
   .chat {
     background: #fff;
     text-align: center;
-    display: inline-block;
+    display: block;
+    padding: 30px;
     border-right: none;
-    width: 100%;
+    max-width: fit-content;
   }
 
   .chat_head {
@@ -289,18 +318,13 @@ li.active a {
   }
 
   .common_menu {
-    visibility: hidden;
+    display: none;
   }
 
   ul {
     display: block;
     font-weight: bold;
     text-align: center;
-  }
-
-  .dropdown{
-    position: relative;
-    display: inline-block;
   }
 
 }
