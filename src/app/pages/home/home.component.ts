@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   state = "on";
   toggler = true;
   search = "";
+  error = "";
 
   constructor(
     private router: Router,
@@ -39,6 +40,8 @@ export class HomeComponent implements OnInit {
     this.apiService.fetchNews()
       .subscribe(n => {
         this.newsTitle = n.articles.map((t: { title: string; }) => t.title)
+      }, error => {
+        this.error = error.message
       })
   }
 

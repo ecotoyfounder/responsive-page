@@ -46,25 +46,28 @@
         </svg>
       </button>
     </div>
-    <div *ngIf="toggler; else open">
-      <div class="chat_container">
-        <div *ngIf="newsTitle.length; else noNews">
-          <div *ngFor="let title of newsTitle | search: search">
-            <div class="flex">
+    <p *ngIf="error; else newsBlock" class="error">{{ error }}</p>
+    <ng-template #newsBlock>
+      <div *ngIf="toggler; else open">
+        <div class="chat_container">
+          <div *ngIf="newsTitle.length; else noNews">
+            <div *ngFor="let title of newsTitle | search: search">
+              <div class="flex">
                 <input
                   type="checkbox"
                   [value]="title"
                   (change)="addSelectedNews($event)"
                 >
-              <h4>{{ title }}</h4>
+                <h4>{{ title }}</h4>
+              </div>
             </div>
           </div>
+          <ng-template #noNews>
+            <h2>No news to show</h2>
+          </ng-template>
         </div>
-        <ng-template #noNews>
-          <h2>No news to show</h2>
-        </ng-template>
       </div>
-    </div>
+    </ng-template>
   </div>
   <ng-template #open>
     <div class="chat_container">

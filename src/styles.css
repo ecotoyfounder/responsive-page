@@ -6,14 +6,6 @@
   --active-color: #E61C42;
 }
 
-.flex {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 5px;
-  padding: 5px;
-}
-
 h4 {
   margin: 14px;
   text-align: start;
@@ -226,6 +218,23 @@ li.active a {
   width: 50px;
 }
 
+.error {
+  color: #E61C42;
+  text-align: center;
+  display: inline-block;
+  transform: scale(0.8);
+  margin: auto;
+  max-width: fit-content;
+}
+
+.flex {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+}
+
 @media screen and (max-width: 1300px) {
 
   button {
@@ -240,6 +249,14 @@ li.active a {
     width: 100%;
     max-width: content-box;
   }
+
+  /*.error {*/
+  /*  color: #E61C42;*/
+  /*  text-align: center;*/
+  /*  display: block;*/
+  /*  padding: 30px;*/
+  /*  max-width: max-content;*/
+  /*}*/
 
   .chat_head {
     display: block;
@@ -325,6 +342,14 @@ li.active a {
     display: block;
     font-weight: bold;
     text-align: center;
+  }
+  .error {
+    color: #E61C42;
+    text-align: center;
+    display: inline-block;
+    transform: scale(0.6);
+    margin: auto;
+    max-width: fit-content;
   }
 
 }
